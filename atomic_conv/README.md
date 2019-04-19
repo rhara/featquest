@@ -6,7 +6,7 @@
 
 2. バッチ実行用のシェルスクリプト`bulkrun.sh`を生成します。
 ```
-python mkbulkrun.py v2015
+python mkbulkrun.py v2015 > bulkrun.sh
 ```
 
 3. 生成したシェルスクリプト`bulkrun.sh`を実行します。
