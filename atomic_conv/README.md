@@ -16,7 +16,7 @@ python bulkrun.py v2015
 python concat_npz.py
 ```
 
-4. INDEXファイルからyの値を読み込みます（データの中の学習データXと正答yは当然対応します）
+4. INDEXファイルからyの値を読み込み、出力のデータセットに加えます（データの中の学習データXと正答yは当然対応します）。
 ```
 python add_y.py all.npz v2015/INDEX_general_PL_data.2015 Xy.npz
 ```
@@ -24,13 +24,15 @@ python add_y.py all.npz v2015/INDEX_general_PL_data.2015 Xy.npz
 5. このデータをPythonスクリプトに取り込みます。
 ```
 >>> import numpy as np
->>> data = np.load('all.npz')
+>>> data = np.load('Xy.npz')
 >>> X = data['X']
+>>> y = data['y']
 >>> print(X.shape) #shapeの確認
+>>> print(y.shape)
 >>> codes = data['codes'].tolist()
->>> codes
+>>> print(codes)
 ```
-ここで、shapeが(n, 90, 14, 22)であることが確認できます。 (nは実行環境によります)
+ここで、shapeがX=(n, 90, 14, 22), y=(n,)であることが確認できます。 (nは実行環境によります)
 
 
 ### 修正のポイント
