@@ -16,7 +16,12 @@ python bulkrun.py v2015
 python concat_npz.py
 ```
 
-4. このデータをPythonスクリプトに取り込みます。
+4. INDEXファイルからyの値を読み込みます（データの中の学習データXと正答yは当然対応します）
+```
+python add_y.py all.npz v2015/INDEX_general_PL_data.2015 Xy.npz
+```
+
+5. このデータをPythonスクリプトに取り込みます。
 ```
 >>> import numpy as np
 >>> data = np.load('all.npz')
