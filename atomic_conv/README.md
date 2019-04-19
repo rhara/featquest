@@ -4,23 +4,19 @@
 
 1. `pdbbind_v2015.tar.gz`を展開しディレクトリ`v2015/`がカレントディレクトリにある状態にしてください。
 
-2. バッチ実行用のシェルスクリプト`bulkrun.sh`を生成します。
+2. 指定したディレクトリをまとめてデータ化します。
 ```
-python mkbulkrun.py v2015
+python bulkrun.py v2015
 ```
 
-3. 生成したシェルスクリプト`bulkrun.sh`を実行します。
-```
-bash bulkrun.sh
-```
 ※ テストでは、途中でCtrl-Cで終了しても構いません。
 
-4. カレントディレクトリにあるすべての`*_out.npz`ファイルを結合します。
+3. カレントディレクトリにあるすべての`*_out.npz`ファイルを結合します。
 ```
 python concat_npz.py
 ```
 
-5. このデータをPythonスクリプトに取り込みます。
+4. このデータをPythonスクリプトに取り込みます。
 ```
 >>> import numpy as np
 >>> data = np.load('all.npz')
